@@ -47,7 +47,7 @@ function leftKey(e) {
 						if(grid[i][k] == 0){
 							grid[i][k] = grid[i][x];
 							grid[i][x] = 0;
-							grid[i][++x] = grid[i][x];
+							grid[i][x] = grid[i][++x];
 							x--;
 						}
 
