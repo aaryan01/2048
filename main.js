@@ -39,22 +39,24 @@ function leftKey(e) {
 
 		for(i=0; i<4; i++)	{
 			for(j=3; j>=0; j--)	{
+				x = j;
 				if(grid[i][j] == 0) {}
 
 				else {
-					for(k=j-1; k>=0; k--)	{
+					for(k=x-1; k>=0; k--)	{
 						if(grid[i][k] == 0){
 							grid[i][k] = grid[i][j];
-							grid[i][j] = 0;
-							j--;
+							grid[i][x] = 0;
+							x--;
 						}
 
 						else {
 							if(grid[i][k] == grid[i][j]) {
 								grid[i][k] *= 2;
-								grid[i][j] = 0;
+								grid[i][x] = 0;
+								x--;
 							}
-							else if(grid[i][k] != grid[i][j]){}
+							else if(grid[i][k] != grid[i][x]){}
 						
 						}
 					}
