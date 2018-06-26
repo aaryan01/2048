@@ -2,7 +2,7 @@
 
 let i;
 let j;
-	
+let y;	
 //Creating Grid
 
 function create2DArray(rows)	{
@@ -29,6 +29,21 @@ for(i=0; i<4; i++)	{
 grid[Math.floor(4*Math.random())][Math.floor(4*Math.random())] = 2;
 grid[Math.floor(4*Math.random())][Math.floor(4*Math.random())] = 2;
 
+// Random Number every turn
+
+let arr = create2DArray(4);
+
+function randomTwo(arr)	{
+	let m,n;
+	m = 4*Math.floor(Math.random());
+	n = 4*Math.floor(Math.random());
+
+	if(arr[m][n] == 0){
+		arr[m][n] = 2;
+		return;
+	}
+	else randomTwo(arr);
+}
 
 //Press left key
 
@@ -47,7 +62,7 @@ function leftKey(e) {
 						if(grid[i][k] == 0){
 							grid[i][k] = grid[i][x];
 							grid[i][x] = 0;
-							grid[i][x] = grid[i][++x];
+							if(x!=3)grid[i][x] = grid[i][++x];
 							x--;
 						}
 
@@ -55,16 +70,18 @@ function leftKey(e) {
 							if(grid[i][k] == grid[i][x]) {
 								grid[i][k] *= 2;
 								grid[i][x] = 0;
+								if(x!=3)grid[i][x] = grid[i][++x];
 								x--;
 							}
-							else if(grid[i][k] != grid[i][x]){}
-							x--;
+						else if(grid[i][k] != grid[i][x]){x--;}
 						}
 					}
 				}
 			}
 		}
-		grid[Math.floor(4*Math.random())][Math.floor(4*Math.random())] = 2;	
+		// grid[Math.floor(4*Math.random())][Math.floor(4*Math.random())] = 2;	
+		randomTwo(grid);
+		console.log(grid);
 	}	
 }
 
