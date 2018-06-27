@@ -2,6 +2,8 @@
 
 let i;
 let j;
+let m;
+let n;
 //Creating Grid
 
 function create2DArray(rows)	{
@@ -28,13 +30,19 @@ for(i=0; i<4; i++)	{
 grid[Math.floor(4*Math.random())][Math.floor(4*Math.random())] = 2;
 grid[Math.floor(4*Math.random())][Math.floor(4*Math.random())] = 2;
 
+
+
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
 // Random Number every turn
 
 function randomTwo(arr)	{
 
-	let m = 4*Math.floor(Math.random());
-	let n = 4*Math.floor(Math.random());
-
+	 m = getRandomArbitrary(0,4);
+	 n = getRandomArbitrary(0,4);
+	 console.log(m,n);
 	if(arr[m][n] == 0){
 		arr[m][n] = 2;
 		return;
