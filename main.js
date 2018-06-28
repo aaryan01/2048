@@ -55,6 +55,18 @@ function randomTwo(arr)	{
 }
 
 
+// Avoid Double merge
+
+let map = create2DArray(4);
+
+for(y=0; y<4; y++)	{
+	for(u=0; u<4; u++)	{
+		map[y][u] = 0;
+	}
+}
+
+
+
 //Press left key
 
 document.addEventListener('keyup', leftKey);
@@ -78,18 +90,31 @@ function leftKey(e) {
 
 						else if(grid[i][k] == grid[i][x]) {
 
-							grid[i][k] *= 2;
-							grid[i][x] = 0;
-							if(x!=3)grid[i][x] = grid[i][++x];
-							x--;
+							if(map[i][x] === 0){
+								grid[i][k] *= 2;
+								map[i][k] = 1;
+								grid[i][x] = 0;
+								if(x!=3)grid[i][x] = grid[i][++x];
+								x--;
 							}
+							else {}
+							
+						}
 
 						else {x--;}
 						
 					}
 				}
+					
 									
 			}
+
+						for(y=0; y<4; y++)	{
+							for(u=0; u<4; u++)	{
+								map[y][u] = 0;
+							}
+						}
+
 		}
 					
 		randomTwo(grid);
