@@ -1,4 +1,4 @@
-// 2048 The Game 
+-// 2048 The Game 
 
 let i;
 let j;
