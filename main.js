@@ -1,4 +1,4 @@
--// 2048 The Game 
+// 2048 The Game 
 
 let i;
 let j;
@@ -10,17 +10,17 @@ let u;
 
 function create2DArray(rows)	{
 
-	grid = [];
+	arr = [];
 
 	for(i=0; i<rows; i++)	{
-		grid[i]=[];
+		arr[i]=[];
 	}
 
-	return grid;
+	return arr;
 }
 
 
-create2DArray(4);
+let grid = create2DArray(4);
 
 for(i=0; i<4; i++)	{
 	for(j=0; j<4; j++)	{
@@ -39,31 +39,26 @@ function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+// Swap
+
+
+
 
 // Random Number every turn
 
-function randomTwo(arr)	{
+function randomTwo(array)	{
 
 	 m = getRandomArbitrary(0,4);
 	 n = getRandomArbitrary(0,4);
 	 console.log(m,n);
-	if(arr[m][n] == 0){
-		arr[m][n] = 2;
+	if(array[m][n] == 0){
+		array[m][n] = 2;
 		return;
 	}
-	else randomTwo(arr);
+	else randomTwo(array);
 }
 
 
-// Avoid Double merge
-
-let mapping = create2DArray(4);
-
-for(y=0; y<4; y++)	{
-	for(u=0; u<4; u++)	{
-		mapping[y][u] = 0;
-	}
-}
 
 
 
@@ -74,51 +69,7 @@ document.addEventListener('keyup', leftKey);
 function leftKey(e) {
 	if(e.keyCode == 37)	{
 
-		for(i=0; i<4; i++)	{
-			for(j=3; j>=0; j--)	{
-				x = j;
-				if(grid[i][j] == 0) {}
-
-				else {
-					for(k=x-1; k>=0; k--)	{
-						if(grid[i][k] == 0){
-						    grid[i][k] = grid[i][x];
-							grid[i][x] = 0;
-							if(x!=3)grid[i][x] = grid[i][++x];
-							x--;
-						}
-
-						else if(grid[i][k] == grid[i][x]) {
-
-							if(mapping[i][x] === 0){
-								grid[i][k] *= 2;
-								mapping[i][k] = 1;
-								grid[i][x] = 0;
-								if(x!=3)grid[i][x] = grid[i][++x];
-								x--;
-							}
-							else {}
-							
-						}
-
-						else {x--;}
-						
-					}
-				}
-					
-									
-			}
-
-						for(y=0; y<4; y++)	{
-							for(u=0; u<4; u++)	{
-								mapping[y][u] = 0;
-							}
-						}
-
-		}
-					
-		randomTwo(grid);
-		console.log(grid);
+		
 	}	
 }
 
@@ -129,39 +80,29 @@ document.addEventListener('keyup', rightKey);
 
 function rightKey(e) {
 	if(e.keyCode == 39)	{
-
-		for(i=0; i<4; i++)	{
+	
+		for(i=0; y<4; i++)	{
 			for(j=0; j<4; j++)	{
-				x = j;
-				if(grid[i][j] == 0) {}
+				for(x=j; x<3; x++)	{
+					if(grid[i][x] == 0 && grid[i][x+1] == 0){}
 
-				else {
-					for(k=x+1; k<4; k++)	{
-						if(grid[i][k] == 0){
-						    grid[i][k] = grid[i][x];
-							grid[i][x] = 0;
-							if(x!=0)grid[i][x] = grid[i][--x];
-							x++;
-						}
+					if(grid[i][x] == 0 && grid[i][x+1] !=0){}
 
-						else if(grid[i][k] == grid[i][x]) {
-
-							grid[i][k] *= 2;
-							grid[i][x] = 0;
-							if(x!=0)grid[i][x] = grid[i][--x];
-							x++;
-							}
-
-						else {x++;}
-						
+					if(grid[i][x] !=0 && grid[i][x+1] == 0)	{
+						grid[i][x+1] = grid[i][x];
+						grid[i][x] = 0;
 					}
+					if(grid[i][x] != 0 && grid[i][x+1] != 0 && grid[i][x] == grid[i][x+1]) {
+						grid[i][x+1] += grid[i][x];
+						grid[i][x] == 0;
+					} 
+					if(grid[i][x] != 0 && grid[i][x+1] != 0 && grid[i][x] != grid[i][x+1]) {}
+
 				}
-									
 			}
 		}
-					
-		randomTwo(grid);
 		console.log(grid);
+		randomTwo(grid);
 	}	
 }
 
@@ -173,38 +114,7 @@ document.addEventListener('keyup', upKey);
 function upKey(e) {
 	if(e.keyCode == 38)	{
 
-		for(j=0; j<4; j++)	{
-			for(i=3; i>=0; i--)	{
-				x = i;
-				if(grid[i][j] == 0) {}
-
-				else {
-					for(k=x-1; k>=0; k--)	{
-						if(grid[k][j] == 0){
-						    grid[k][j] = grid[x][j];
-							grid[x][j] = 0;
-							if(x!=3)grid[x][j] = grid[x++][j];
-							x--;
-						}
-
-						else if(grid[k][j] == grid[x][j]) {
-
-							grid[k][j] *= 2;
-							grid[x][j] = 0;
-							if(x!=3)grid[x][j] = grid[x++][j];
-							x--;
-							}
-
-						else {x--;}
-						
-					}
-				}
-									
-			}
-		}
-					
-		randomTwo(grid);
-		console.log(grid);
+		
 	}	
 }
 
@@ -215,38 +125,7 @@ document.addEventListener('keyup', downKey);
 function downKey(e) {
 	if(e.keyCode == 40)	{
 
-		for(j=0; j<4; j++)	{
-			for(i=0; i<4; i++)	{
-				x = i;
-				if(grid[i][j] == 0) {}
-
-				else {
-					for(k=x+1; k<4; k++)	{
-						if(grid[k][j] == 0){
-						    grid[k][j] = grid[x][j];
-							grid[x][j] = 0;
-							if(x!=0)grid[x][j] = grid[x--][j];
-							x++;
-						}
-
-						else if(grid[k][j] == grid[x][j]) {
-
-							grid[k][j] *= 2;
-							grid[x][j] = 0;
-							if(x!=0)grid[x][j] = grid[x--][j];
-							x++;
-							}
-
-						else {x++;}
-						
-					}
-				}
-									
-			}
-		}
-					
-		randomTwo(grid);
-		console.log(grid);
+		
 	}	
 }
 
