@@ -46,7 +46,6 @@ function randomTwo(array)	{
 
 	 m = getRandomArbitrary(0,4);
 	 n = getRandomArbitrary(0,4);
-	 console.log(m,n);
 	if(array[m][n] == 0){
 		array[m][n] = 2;
 		return;
