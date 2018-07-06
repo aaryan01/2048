@@ -5,7 +5,7 @@ let j;
 let m;
 let n;
 let y;
-let u;
+let x;
 //Creating Grid
 
 function create2DArray(rows)	{
@@ -32,45 +32,25 @@ for(i=0; i<4; i++)	{
 grid[getRandomArbitrary(0,4)][getRandomArbitrary(0,4)] = 2;
 grid[getRandomArbitrary(0,4)][getRandomArbitrary(0,4)] = 2;
 
-// Display start
 
+// Display
 
-if(grid[0][0] !=0 ) 
-	document.getElementsByClassName("tile-1")[0].innerHTML = grid[0][0];
-if(grid[0][1] !=0 ) 
-	document.getElementsByClassName("tile-2")[0].innerHTML = grid[0][1];
-if(grid[0][2] !=0 ) 
-	document.getElementsByClassName("tile-3")[0].innerHTML = grid[0][2];
-if(grid[0][3] !=0 ) 
-	document.getElementsByClassName("tile-4")[0].innerHTML = grid[0][3];
-if(grid[1][0] !=0 ) 
-	document.getElementsByClassName("tile-5")[0].innerHTML = grid[1][0];
-if(grid[1][1] !=0 ) 
-	document.getElementsByClassName("tile-6")[0].innerHTML = grid[1][1];
-if(grid[1][2] !=0 ) 
-	document.getElementsByClassName("tile-7")[0].innerHTML = grid[1][2];
-if(grid[1][3] !=0 ) 
-	document.getElementsByClassName("tile-8")[0].innerHTML = grid[1][3];
-if(grid[2][0] !=0 ) 
-	document.getElementsByClassName("tile-9")[0].innerHTML = grid[2][0];
-if(grid[2][1] !=0 ) 
-	document.getElementsByClassName("tile-10")[0].innerHTML = grid[2][1];
-if(grid[2][2] !=0 ) 
-	document.getElementsByClassName("tile-11")[0].innerHTML = grid[2][2];
-if(grid[2][3] !=0 ) 
-	document.getElementsByClassName("tile-12")[0].innerHTML = grid[2][3];
-if(grid[3][0] !=0 ) 
-	document.getElementsByClassName("tile-13")[0].innerHTML = grid[3][0];
-if(grid[3][1] !=0 ) 
-	document.getElementsByClassName("tile-14")[0].innerHTML = grid[3][1];
-if(grid[3][2] !=0 ) 
-	document.getElementsByClassName("tile-15")[0].innerHTML = grid[3][2];
-if(grid[3][3] !=0 ) 
-	document.getElementsByClassName("tile-16")[0].innerHTML = grid[3][3];
+let cell = document.getElementsByClassName("tile");
 
-// Display end
+for(x=0;x<16;x++)	{
+	cell[x].style = "font-size : 30px";
+}
 
+x=0;
+for(i=0; i<4; i++)	{
+	for(j=0; j<4; j++)	{
+		if(grid[i][j] != 0)	
+		cell[x++].innerHTML = grid[i][j];
 
+		else
+			cell[x++].innerHTML = ""
+	}
+}
 
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -118,47 +98,21 @@ function leftKey(e) {
 				}
 			}
 		}		
-		// Display start
 
-
-if(grid[0][0] !=0 ) 
-	document.getElementsByClassName("tile-1")[0].innerHTML = grid[0][0];
-if(grid[0][1] !=0 ) 
-	document.getElementsByClassName("tile-2")[0].innerHTML = grid[0][1];
-if(grid[0][2] !=0 ) 
-	document.getElementsByClassName("tile-3")[0].innerHTML = grid[0][2];
-if(grid[0][3] !=0 ) 
-	document.getElementsByClassName("tile-4")[0].innerHTML = grid[0][3];
-if(grid[1][0] !=0 ) 
-	document.getElementsByClassName("tile-5")[0].innerHTML = grid[1][0];
-if(grid[1][1] !=0 ) 
-	document.getElementsByClassName("tile-6")[0].innerHTML = grid[1][1];
-if(grid[1][2] !=0 ) 
-	document.getElementsByClassName("tile-7")[0].innerHTML = grid[1][2];
-if(grid[1][3] !=0 ) 
-	document.getElementsByClassName("tile-8")[0].innerHTML = grid[1][3];
-if(grid[2][0] !=0 ) 
-	document.getElementsByClassName("tile-9")[0].innerHTML = grid[2][0];
-if(grid[2][1] !=0 ) 
-	document.getElementsByClassName("tile-10")[0].innerHTML = grid[2][1];
-if(grid[2][2] !=0 ) 
-	document.getElementsByClassName("tile-11")[0].innerHTML = grid[2][2];
-if(grid[2][3] !=0 ) 
-	document.getElementsByClassName("tile-12")[0].innerHTML = grid[2][3];
-if(grid[3][0] !=0 ) 
-	document.getElementsByClassName("tile-13")[0].innerHTML = grid[3][0];
-if(grid[3][1] !=0 ) 
-	document.getElementsByClassName("tile-14")[0].innerHTML = grid[3][1];
-if(grid[3][2] !=0 ) 
-	document.getElementsByClassName("tile-15")[0].innerHTML = grid[3][2];
-if(grid[3][3] !=0 ) 
-	document.getElementsByClassName("tile-16")[0].innerHTML = grid[3][3];
-
-// Display end
 
 	console.log(grid);
 	randomTwo(grid);
 		
+	x=0;
+for(i=0; i<4; i++)	{
+	for(j=0; j<4; j++)	{
+		if(grid[i][j] != 0)	
+		cell[x++].innerHTML = grid[i][j];
+
+		else
+			cell[x++].innerHTML = ""
+	}
+}
 	}	
 }
 
@@ -186,47 +140,21 @@ function rightKey(e) {
 					}
 				}
 			}
-		}		
-		// Display start
-
-
-if(grid[0][0] !=0 ) 
-	document.getElementsByClassName("tile-1")[0].innerHTML = grid[0][0];
-if(grid[0][1] !=0 ) 
-	document.getElementsByClassName("tile-2")[0].innerHTML = grid[0][1];
-if(grid[0][2] !=0 ) 
-	document.getElementsByClassName("tile-3")[0].innerHTML = grid[0][2];
-if(grid[0][3] !=0 ) 
-	document.getElementsByClassName("tile-4")[0].innerHTML = grid[0][3];
-if(grid[1][0] !=0 ) 
-	document.getElementsByClassName("tile-5")[0].innerHTML = grid[1][0];
-if(grid[1][1] !=0 ) 
-	document.getElementsByClassName("tile-6")[0].innerHTML = grid[1][1];
-if(grid[1][2] !=0 ) 
-	document.getElementsByClassName("tile-7")[0].innerHTML = grid[1][2];
-if(grid[1][3] !=0 ) 
-	document.getElementsByClassName("tile-8")[0].innerHTML = grid[1][3];
-if(grid[2][0] !=0 ) 
-	document.getElementsByClassName("tile-9")[0].innerHTML = grid[2][0];
-if(grid[2][1] !=0 ) 
-	document.getElementsByClassName("tile-10")[0].innerHTML = grid[2][1];
-if(grid[2][2] !=0 ) 
-	document.getElementsByClassName("tile-11")[0].innerHTML = grid[2][2];
-if(grid[2][3] !=0 ) 
-	document.getElementsByClassName("tile-12")[0].innerHTML = grid[2][3];
-if(grid[3][0] !=0 ) 
-	document.getElementsByClassName("tile-13")[0].innerHTML = grid[3][0];
-if(grid[3][1] !=0 ) 
-	document.getElementsByClassName("tile-14")[0].innerHTML = grid[3][1];
-if(grid[3][2] !=0 ) 
-	document.getElementsByClassName("tile-15")[0].innerHTML = grid[3][2];
-if(grid[3][3] !=0 ) 
-	document.getElementsByClassName("tile-16")[0].innerHTML = grid[3][3];
-
-// Display end
+		}	
 
 	console.log(grid);
 	randomTwo(grid);
+
+x=0;
+for(i=0; i<4; i++)	{
+	for(j=0; j<4; j++)	{
+		if(grid[i][j] != 0)	
+		cell[x++].innerHTML = grid[i][j];
+
+		else
+			cell[x++].innerHTML = ""
+	}
+}
 	}	
 }
 
@@ -255,47 +183,20 @@ function upKey(e) {
 				}
 			}
 		}	
-		// Display start
-
-
-if(grid[0][0] !=0 ) 
-	document.getElementsByClassName("tile-1")[0].innerHTML = grid[0][0];
-if(grid[0][1] !=0 ) 
-	document.getElementsByClassName("tile-2")[0].innerHTML = grid[0][1];
-if(grid[0][2] !=0 ) 
-	document.getElementsByClassName("tile-3")[0].innerHTML = grid[0][2];
-if(grid[0][3] !=0 ) 
-	document.getElementsByClassName("tile-4")[0].innerHTML = grid[0][3];
-if(grid[1][0] !=0 ) 
-	document.getElementsByClassName("tile-5")[0].innerHTML = grid[1][0];
-if(grid[1][1] !=0 ) 
-	document.getElementsByClassName("tile-6")[0].innerHTML = grid[1][1];
-if(grid[1][2] !=0 ) 
-	document.getElementsByClassName("tile-7")[0].innerHTML = grid[1][2];
-if(grid[1][3] !=0 ) 
-	document.getElementsByClassName("tile-8")[0].innerHTML = grid[1][3];
-if(grid[2][0] !=0 ) 
-	document.getElementsByClassName("tile-9")[0].innerHTML = grid[2][0];
-if(grid[2][1] !=0 ) 
-	document.getElementsByClassName("tile-10")[0].innerHTML = grid[2][1];
-if(grid[2][2] !=0 ) 
-	document.getElementsByClassName("tile-11")[0].innerHTML = grid[2][2];
-if(grid[2][3] !=0 ) 
-	document.getElementsByClassName("tile-12")[0].innerHTML = grid[2][3];
-if(grid[3][0] !=0 ) 
-	document.getElementsByClassName("tile-13")[0].innerHTML = grid[3][0];
-if(grid[3][1] !=0 ) 
-	document.getElementsByClassName("tile-14")[0].innerHTML = grid[3][1];
-if(grid[3][2] !=0 ) 
-	document.getElementsByClassName("tile-15")[0].innerHTML = grid[3][2];
-if(grid[3][3] !=0 ) 
-	document.getElementsByClassName("tile-16")[0].innerHTML = grid[3][3];
-
-// Display end
 	
 	console.log(grid);
 	randomTwo(grid);
 		
+	x=0;
+for(i=0; i<4; i++)	{
+	for(j=0; j<4; j++)	{
+		if(grid[i][j] != 0)	
+		cell[x++].innerHTML = grid[i][j];
+
+		else
+			cell[x++].innerHTML = ""
+	}
+}
 	}	
 }
 
@@ -323,47 +224,20 @@ function downKey(e) {
 				}
 			}
 		}		
-		// Display start
 
-
-if(grid[0][0] !=0 ) 
-	document.getElementsByClassName("tile-1")[0].innerHTML = grid[0][0];
-if(grid[0][1] !=0 ) 
-	document.getElementsByClassName("tile-2")[0].innerHTML = grid[0][1];
-if(grid[0][2] !=0 ) 
-	document.getElementsByClassName("tile-3")[0].innerHTML = grid[0][2];
-if(grid[0][3] !=0 ) 
-	document.getElementsByClassName("tile-4")[0].innerHTML = grid[0][3];
-if(grid[1][0] !=0 ) 
-	document.getElementsByClassName("tile-5")[0].innerHTML = grid[1][0];
-if(grid[1][1] !=0 ) 
-	document.getElementsByClassName("tile-6")[0].innerHTML = grid[1][1];
-if(grid[1][2] !=0 ) 
-	document.getElementsByClassName("tile-7")[0].innerHTML = grid[1][2];
-if(grid[1][3] !=0 ) 
-	document.getElementsByClassName("tile-8")[0].innerHTML = grid[1][3];
-if(grid[2][0] !=0 ) 
-	document.getElementsByClassName("tile-9")[0].innerHTML = grid[2][0];
-if(grid[2][1] !=0 ) 
-	document.getElementsByClassName("tile-10")[0].innerHTML = grid[2][1];
-if(grid[2][2] !=0 ) 
-	document.getElementsByClassName("tile-11")[0].innerHTML = grid[2][2];
-if(grid[2][3] !=0 ) 
-	document.getElementsByClassName("tile-12")[0].innerHTML = grid[2][3];
-if(grid[3][0] !=0 ) 
-	document.getElementsByClassName("tile-13")[0].innerHTML = grid[3][0];
-if(grid[3][1] !=0 ) 
-	document.getElementsByClassName("tile-14")[0].innerHTML = grid[3][1];
-if(grid[3][2] !=0 ) 
-	document.getElementsByClassName("tile-15")[0].innerHTML = grid[3][2];
-if(grid[3][3] !=0 ) 
-	document.getElementsByClassName("tile-16")[0].innerHTML = grid[3][3];
-
-// Display end
 
 	console.log(grid);
 	randomTwo(grid);
-		
+	x=0;
+for(i=0; i<4; i++)	{
+	for(j=0; j<4; j++)	{
+		if(grid[i][j] != 0)	
+		cell[x++].innerHTML = grid[i][j];
+
+		else
+			cell[x++].innerHTML = ""
+	}
+}
 	}	
 }
 
