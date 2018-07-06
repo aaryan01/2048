@@ -1,0 +1,32 @@
+body, header, .tile {
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+	overflow-y: hidden;
+}
+
+header	{
+	text-align: center;
+}
+
+h1	{
+	font-size: 50px;
+	color: 
+}
+.main-box	{
+	width: 500px; 
+	height: 500px;
+	background-color: rgb(183,172,155);
+	margin: 5px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: space-around;
+}
+
+.tile 	{
+	background-color: rgb(204,192,175);
+	width: 22%;
+	height: 22%;
+	border-radius: 10%;
+}

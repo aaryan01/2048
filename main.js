@@ -28,10 +28,9 @@ for(i=0; i<4; i++)	{
 	}
 }
 	
-// Assigning 2 to random positions
 
-grid[Math.floor(4*Math.random())][Math.floor(4*Math.random())] = 2;
-grid[Math.floor(4*Math.random())][Math.floor(4*Math.random())] = 2;
+grid[getRandomArbitrary(0,4)][getRandomArbitrary(0,4)] = 2;
+grid[getRandomArbitrary(0,4)][getRandomArbitrary(0,4)] = 2;
 
 
 
