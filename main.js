@@ -235,7 +235,7 @@ for(i=0; i<4; i++)	{
 		cell[x++].innerHTML = grid[i][j];
 
 		else
-			cell[x++].innerHTML = ""
+			cell[x++].innerHTML = "";
 	}
 }
 	}	
