@@ -39,10 +39,6 @@ function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-// Swap
-
-
-
 
 // Random Number every turn
 
@@ -80,29 +76,26 @@ document.addEventListener('keyup', rightKey);
 
 function rightKey(e) {
 	if(e.keyCode == 39)	{
-	
 		for(i=0; y<4; i++)	{
-			for(j=0; j<4; j++)	{
-				for(x=j; x<3; x++)	{
-					if(grid[i][x] == 0 && grid[i][x+1] == 0){}
-
-					if(grid[i][x] == 0 && grid[i][x+1] !=0){}
-
-					if(grid[i][x] !=0 && grid[i][x+1] == 0)	{
-						grid[i][x+1] = grid[i][x];
-						grid[i][x] = 0;
+			for(j=2; j>=0; j--)	{
+				if(grid[i][j] != 0)	{
+					for(x=j; x<3; x++)	{
+						if(grid[i][x+1] == 0)	{
+							grid[i][x+1] = grid[i][x];
+							grid[i][x] = 0;
+						}
+						else if(grid[i][x] == grid[i][x+1])	{
+							grid[i][x+1] *= 2;
+							grid[i][x] = 0;
+							break;
+						}
+						else break;
 					}
-					if(grid[i][x] != 0 && grid[i][x+1] != 0 && grid[i][x] == grid[i][x+1]) {
-						grid[i][x+1] += grid[i][x];
-						grid[i][x] == 0;
-					} 
-					if(grid[i][x] != 0 && grid[i][x+1] != 0 && grid[i][x] != grid[i][x+1]) {}
-
 				}
 			}
-		}
-		console.log(grid);
-		randomTwo(grid);
+		}		
+	console.log(grid);
+	randomTwo(grid);
 	}	
 }
 
