@@ -161,9 +161,9 @@ function downKey(e) {
 							grid[x+1][j] = grid[x][j];
 							grid[x][j] = 0;
 						}
-						else if(grid[i][x] == grid[i][x+1])	{
-							grid[i][x+1] *= 2;
-							grid[i][x] = 0;
+						else if(grid[x+1][j] == grid[x][j])	{
+							grid[x+1][j] *= 2;
+							grid[x][j] = 0;
 							break;
 						}
 						else break;
