@@ -83,8 +83,7 @@ function leftKey(e) {
 		for(i=0; i<4; i++)	{
 			for(j=1; j<4; j++)	{
 				if(grid[i][j] != 0)	{
-					x= j;
-					while(x-1>=0)	{
+					for(x=j; x>0;)	{
 						if(grid[i][x-1] == 0)	{
 							grid[i][x-1] = grid[i][x];
 							grid[i][x] = 0;
