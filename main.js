@@ -127,8 +127,7 @@ function rightKey(e) {
 		for(i=0; i<4; i++)	{
 			for(j=2; j>=0; j--)	{
 				if(grid[i][j] != 0)	{
-					x=j;
-					while(x< 3)	{
+					for(x=j;x<3;)	{
 						if(grid[i][x+1] == 0)	{
 							grid[i][x+1] = grid[i][x];
 							grid[i][x] = 0;
@@ -171,8 +170,7 @@ function upKey(e) {
 		for(j=0; j<4; j++)	{
 			for(i=1; i<4; i++)	{
 				if(grid[i][j] != 0)	{
-					x = i;
-					while(x>0)	{
+					for(x=i; x>0;){
 						if(grid[x-1][j] == 0)	{
 							grid[x-1][j] = grid[x][j];
 							grid[x][j] = 0;
@@ -214,8 +212,7 @@ function downKey(e) {
 		for(j=0; j<4; j++)	{
 			for(i=2; i>=0; i--)	{
 				if(grid[i][j] != 0)	{
-					x=i;
-					while(x<3)	{
+					for(x=i; x<3;){
 						if(grid[x+1][j] == 0)	{
 							grid[x+1][j] = grid[x][j];
 							grid[x][j] = 0;
